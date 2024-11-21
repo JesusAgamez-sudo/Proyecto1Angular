@@ -1,0 +1,39 @@
+<h2>Registro</h2>
+<form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+  <mat-form-field>
+    <mat-label>Nombre</mat-label>
+    <input matInput formControlName="name" type="text" placeholder="Ingresa tu nombre" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Correo</mat-label>
+    <input matInput formControlName="email" type="email" placeholder="Ingresa tu correo" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Contraseña</mat-label>
+    <input matInput formControlName="password" type="password" placeholder="Crea una contraseña" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Cargar Documento</mat-label>
+    <input type="file" (change)="onFileChange($event)" />
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">Registrarse</button>
+</form>
+
+<h2>Inicio de Sesión</h2>
+<form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+  <mat-form-field>
+    <mat-label>Correo</mat-label>
+    <input matInput formControlName="email" type="email" placeholder="Ingresa tu correo" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Contraseña</mat-label>
+    <input matInput formControlName="password" type="password" placeholder="Ingresa tu contraseña" />
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Ingresar</button>
+</form>
